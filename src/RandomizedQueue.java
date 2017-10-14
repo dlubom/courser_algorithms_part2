@@ -49,19 +49,13 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         int r = StdRandom.uniform(n);
         Node<Item> item = first;
         Node<Item> itemBefore = null;
-        for (int i = 1; i <= r; i++) {
+        for (int i = 1; i < r; i++) {
             itemBefore = item;
-            if (item.next != null)
-                item = item.next;
+            item = item.next;
         }
-        if (itemBefore == null) {
-            first = item.next;
-        } else if (itemBefore.next == last) {
-            last = itemBefore;
-        } else {
-            if (itemBefore.next != null)
-                itemBefore.next = itemBefore.next.next;
-        }
+        if (item != first && item != last) itemBefore.next = itemBefore.next.next;
+        else if (item == first) first = item.next;
+        else last = itemBefore;
         n--;
         if (n == 0) {
             first = null;

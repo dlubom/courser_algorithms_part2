@@ -108,8 +108,8 @@ public class Deque<Item> implements Iterable<Item> {
         }
     }
 
+    // for testing
     public static void main(String[] args) {
-        // write your code here
         Deque<String> deque = new Deque<String>();
 
         deque.addFirst("ZJVNWPBVLP");
@@ -124,13 +124,6 @@ public class Deque<Item> implements Iterable<Item> {
         deque.removeFirst(); //     ==> GPRGSBTZCO
         deque.addLast("OCCOBGOYTC");
         deque.addLast("CQQRXDLDCG");
-
-
-//        d.addFirst(0);
-//        d.addLast(1);
-//        d.removeLast();
-//        d.addFirst(3);
-//        d.removeLast();
     }
 
     // resize the underlying array
